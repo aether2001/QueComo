@@ -28,5 +28,6 @@ dependencies {
     compile 'com.android.support:design:27.0.2'
     testCompile 'junit:junit:4.12'
     compile 'junit:junit:4.12'
+    compile 'com.github.satyan:sugar:1.5'
 
 }

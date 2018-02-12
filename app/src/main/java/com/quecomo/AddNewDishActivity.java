@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.quecomo.entities.Dish;
+
 public class AddNewDishActivity extends AppCompatActivity{
 
     @Override
@@ -18,12 +20,15 @@ public class AddNewDishActivity extends AppCompatActivity{
 
     public void saveNewDish(View view) {
         EditText editText = findViewById(R.id.dishNameInput);
-        MainActivity.getRecipesList().add(editText.getText().toString());
+        Dish newDish = new Dish(editText.getText().toString(), null);
+        newDish.save();
         Toast toast = Toast.makeText(this, R.string.newDishAdded, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
         Intent intent = new Intent(AddNewDishActivity.this, MainActivity.class);
         startActivity(intent);
-
     }
+
+
+
 }

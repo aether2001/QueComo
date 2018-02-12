@@ -6,18 +6,6 @@
     tools:context="com.quecomo.AddNewDishActivity">
 
     <EditText
-        android:id="@+id/dishNameLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/dishNameInput"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/dishNameInput"
-        android:layout_marginTop="53dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Nombre del plato:" />
-
-    <EditText
         android:id="@+id/dishNameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,8 +29,20 @@
         android:layout_marginTop="77dp"
         android:onClick="saveNewDish"
         android:text="GUARDAR"
+        android:textSize="18sp"
         tools:layout_editor_absoluteX="137dp"
         tools:layout_editor_absoluteY="206dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dishNameInput"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/dishNameInput"
+        android:layout_marginTop="90dp"
+        android:text="Nombre del plato:"
+        android:textSize="18sp" />
 
 
 </RelativeLayout>

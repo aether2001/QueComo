@@ -24,16 +24,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         Button btn = (Button) view;
-        TextView tv = findViewById(R.id.textView3);
         Random random = new Random();
         List<Dish> dishes = Dish.listAll(Dish.class);
-        int maxValue = dishes.size();
-        int generatedRandom = random.nextInt(maxValue);
-        tv.setText(dishes.get(generatedRandom).getName());
+        int numberOfDishes = dishes.size();
+        if (dishes.size() > 0) {
+            int generatedRandom = random.nextInt(numberOfDishes);
+            TextView tv = findViewById(R.id.dishName);
+            tv.setText(dishes.get(generatedRandom).getName());
+        }
     }
 
-    public void showAddDishActivity(View view)
-    {
+    public void showAddDishActivity(View view) {
         Intent intent = new Intent(MainActivity.this, AddNewDishActivity.class);
         startActivity(intent);
     }

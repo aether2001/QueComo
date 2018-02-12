@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.quecomo.AddNewDishActivity">
+
+    <EditText
+        android:id="@+id/dishNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dishNameInput"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/dishNameInput"
+        android:layout_marginTop="53dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Nombre del plato:" />
+
+    <EditText
+        android:id="@+id/dishNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="224dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="87dp"
+        android:layout_marginRight="69dp"
+        android:layout_marginEnd="69dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dishNameInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp"
+        android:onClick="saveNewDish"
+        android:text="GUARDAR"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="206dp" />
+
+
+</RelativeLayout>

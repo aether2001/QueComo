@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.quecomo.MainActivity">
+
+    <Button
+        android:id="@+id/botonDamePlato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_marginBottom="43dp"
+        android:layout_toLeftOf="@+id/addRecipeButton"
+        android:layout_toStartOf="@+id/addRecipeButton"
+        android:onClick="onClick"
+        android:text="¡Dame receta!"
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="208dp" />
+
+    <TextView
+        android:id="@+id/nombrePlato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/botonDamePlato"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/botonDamePlato"
+        android:layout_marginBottom="94dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/nombrePlato"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginStart="54dp"
+        android:width="250dp"
+        android:height="100dp"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/addRecipeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="23dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:onClick="showAddDishActivity"
+        android:text="Añadir plato" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
+        android:text="¿QUÉ COMO HOY?"
+        android:textSize="40sp" />
+
+</RelativeLayout>

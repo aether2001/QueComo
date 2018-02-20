@@ -39,4 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
+    public void showAllDishesActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, ShowAllDishesActivity.class);
+        startActivity(intent);
+    }
+
 }

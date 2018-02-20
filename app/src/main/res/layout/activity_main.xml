@@ -34,14 +34,27 @@
         android:id="@+id/addRecipeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/dishName"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/dishName"
-        android:layout_marginBottom="28dp"
         android:onClick="showAddDishActivity"
         android:text="Añadir plato"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_below="@+id/dishName"
+        android:layout_alignRight="@+id/dishName"
+        android:layout_alignEnd="@+id/dishName"
+        android:layout_marginTop="88dp" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/addRecipeButton"
+        android:layout_alignLeft="@+id/addRecipeButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/addRecipeButton"
+        android:layout_alignStart="@+id/addRecipeButton"
+        android:layout_marginBottom="16dp"
+        android:onClick="showAllDishesActivity"
+        android:text="Mostrar platos"
+        android:textSize="18sp" />
 
 
 </RelativeLayout>

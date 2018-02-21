@@ -34,8 +34,6 @@ public class DishesListAdapter extends ArrayAdapter {
 
         return rowView;
     }
-
-    ;
 }
 
 

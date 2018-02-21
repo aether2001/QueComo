@@ -34,9 +34,8 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.quecomo.entities" />
 
-        <activity android:name=".ShowAllDishesActivity"></activity>
-
-
+        <activity android:name=".ShowAllDishesActivity" />
+        <activity android:name=".EditDishActivity"></activity>
     </application>
 
 </manifest>

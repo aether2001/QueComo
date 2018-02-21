@@ -1,9 +1,10 @@
 package com.quecomo;
 
-import android.app.ListActivity;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.quecomo.classes.DishesListAdapter;
@@ -13,15 +14,26 @@ import java.util.List;
 
 public class ShowAllDishesActivity extends AppCompatActivity {
 
-    private ListView dishesList;
+    private ListView dishesListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_all_dishes);
         DishesListAdapter adapter = new DishesListAdapter(this, getDishesNames());
-        dishesList = (ListView) findViewById(R.id.dishesListView);
-        dishesList.setAdapter(adapter);
+        dishesListView = (ListView) findViewById(R.id.dishesListView);
+        dishesListView.setAdapter(adapter);
+
+        dishesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int rowNumber,
+                                    long id) {
+                Intent intent = new Intent(ShowAllDishesActivity.this, EditDishActivity.class);
+                String dishName =  getDishesNames()[rowNumber];
+                intent.putExtra("dishName", dishName);
+                startActivity(intent);
+            }
+        });
     }
 
     public String[] getDishesNames() {
@@ -29,7 +41,7 @@ public class ShowAllDishesActivity extends AppCompatActivity {
         String[] dishesNames = new String[dishesList.size()];
 
         int i = 0;
-        for(Dish dish : dishesList) {
+        for (Dish dish : dishesList) {
             dishesNames[i] = dish.getName();
             i++;
         }

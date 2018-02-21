@@ -2,6 +2,7 @@
     <string name="app_name">QueComoHoy</string>
     <string name="newDishAdded">Plato añadido</string>
     <string name="dishEdited">Plato actualizado</string>
+    <string name="dishDeleted">Plato eliminado</string>
     <string name="editDishButton">Guardar</string>
     <string-array name="dishMenuOptions">
         <item>Eliminar</item>

@@ -21,12 +21,14 @@ import java.util.List;
 public class ShowAllDishesActivity extends AppCompatActivity {
 
     private ListView dishesListView;
+    private DishesListAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_all_dishes);
-        DishesListAdapter adapter = new DishesListAdapter(this, getDishesNames());
+        adapter = new DishesListAdapter(this, getDishesNames());
         dishesListView = (ListView) findViewById(R.id.dishesListView);
         dishesListView.setAdapter(adapter);
 
@@ -35,7 +37,7 @@ public class ShowAllDishesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int rowNumber,
                                     long id) {
                 Intent intent = new Intent(ShowAllDishesActivity.this, EditDishActivity.class);
-                String dishName =  getDishesNames()[rowNumber];
+                String dishName = getDishesNames()[rowNumber];
                 intent.putExtra("dishName", dishName);
                 startActivity(intent);
             }
@@ -49,7 +51,7 @@ public class ShowAllDishesActivity extends AppCompatActivity {
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenu.ContextMenuInfo menuInfo) {
         if (v.getId() == R.id.dishesListView) {
-            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
+            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
             menu.setHeaderTitle(getDishesNames()[info.position]);
             String[] menuItems = getResources().getStringArray(R.array.dishMenuOptions);
             for (int i = 0; i < menuItems.length; i++) {
@@ -58,9 +60,12 @@ public class ShowAllDishesActivity extends AppCompatActivity {
         }
     }
 
+    /*
+        Delete dish
+     */
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         int menuItemIndex = item.getItemId();
         String[] optionsMenu = getResources().getStringArray(R.array.dishMenuOptions);
         String optionSelected = optionsMenu[menuItemIndex];
@@ -68,11 +73,14 @@ public class ShowAllDishesActivity extends AppCompatActivity {
         List<Dish> dishes = Dish.find(Dish.class, "name = ?", dishName);
         Dish dish = dishes.get(0);
         dish.delete();
+
         Toast toast = Toast.makeText(this, R.string.dishDeleted, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
-        Intent intent = new Intent(ShowAllDishesActivity.this, ShowAllDishesActivity.class);
-        startActivity(intent);
+
+        adapter = new DishesListAdapter(this, getDishesNames());
+        dishesListView.setAdapter(adapter);
+        //adapter.notifyDataSetChanged();
 
         return true;
     }

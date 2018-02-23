@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">QueComoHoy</string>
+    <string name="addDish">Añadir</string>
+    <string name="showAllDishes">Ver todos</string>
     <string name="newDishAdded">Plato añadido</string>
     <string name="dishEdited">Plato actualizado</string>
     <string name="dishDeleted">Plato eliminado</string>

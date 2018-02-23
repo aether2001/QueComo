@@ -16,13 +16,21 @@ import com.quecomo.R;
 public class DishesListAdapter extends ArrayAdapter {
 
     private final Activity context;
-    private final String[] dishesNames;
+    private String[] dishesNames;
 
 
     public DishesListAdapter(Activity context, String[] nameArrayParam) {
         super(context, R.layout.dishes_list_row, nameArrayParam);
         this.context = context;
         this.dishesNames = nameArrayParam;
+    }
+
+    public String[] getDishesNames() {
+        return dishesNames;
+    }
+
+    public void setDishesNames(String[] dishesNames) {
+        this.dishesNames = dishesNames;
     }
 
     public View getView(int position, View view, ViewGroup parent) {

@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (dishes.size() > 0) {
             int generatedRandom = random.nextInt(numberOfDishes);
             TextView tv = findViewById(R.id.dishName);
-            tv.setText(dishes.get(generatedRandom).getName());
+            String dish = dishes.get(generatedRandom).getName();
+            tv.setText(dish);
         }
     }
 
@@ -42,6 +43,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void showAllDishesActivity(View view) {
         Intent intent = new Intent(MainActivity.this, ShowAllDishesActivity.class);
         startActivity(intent);
+    }
+
+    /* Replaces last three characters of dish name with dots
+
+     */
+    public String formatDishNameDisplay(String dishName) {
+            String dishNameString = new String(dishName);
+            String formattedDish = dishNameString.substring(0, dishName.length() - 4);
+            formattedDish += "." + "." + "." ;
+
+            return  formattedDish;
     }
 
 }

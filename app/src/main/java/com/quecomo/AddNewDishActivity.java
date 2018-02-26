@@ -3,6 +3,7 @@ package com.quecomo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -22,6 +23,9 @@ public class AddNewDishActivity extends AppCompatActivity{
         EditText editText = findViewById(R.id.dishNameInput);
         String dishName = editText.getText().toString();
         if (!"".equals(dishName)) {
+            String firstLetter = dishName.substring(0,1);
+            firstLetter = firstLetter.toUpperCase();
+            dishName = firstLetter + dishName.substring(1);
             Dish newDish = new Dish(dishName, null);
             newDish.save();
             Toast toast = Toast.makeText(this, R.string.newDishAdded, Toast.LENGTH_SHORT);

@@ -10,12 +10,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.quecomo.classes.DishesListAdapter;
 import com.quecomo.entities.Dish;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class ShowAllDishesActivity extends AppCompatActivity {
@@ -80,7 +80,6 @@ public class ShowAllDishesActivity extends AppCompatActivity {
 
         adapter = new DishesListAdapter(this, getDishesNames());
         dishesListView.setAdapter(adapter);
-        //adapter.notifyDataSetChanged();
 
         return true;
     }
@@ -94,6 +93,9 @@ public class ShowAllDishesActivity extends AppCompatActivity {
             dishesNames[i] = dish.getName();
             i++;
         }
+
+        Arrays.sort(dishesNames);
+
         return dishesNames;
     }
 }

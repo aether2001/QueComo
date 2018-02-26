@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.quecomo.entities.Dish;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class AddNewDishActivity extends AppCompatActivity{
 
     @Override
@@ -23,10 +25,8 @@ public class AddNewDishActivity extends AppCompatActivity{
         EditText editText = findViewById(R.id.dishNameInput);
         String dishName = editText.getText().toString();
         if (!"".equals(dishName)) {
-            String firstLetter = dishName.substring(0,1);
-            firstLetter = firstLetter.toUpperCase();
-            dishName = firstLetter + dishName.substring(1);
-            Dish newDish = new Dish(dishName, null);
+            String dishNameFormatted = StringUtils.capitalize(dishName.trim());
+            Dish newDish = new Dish(dishNameFormatted, null);
             newDish.save();
             Toast toast = Toast.makeText(this, R.string.newDishAdded, Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);

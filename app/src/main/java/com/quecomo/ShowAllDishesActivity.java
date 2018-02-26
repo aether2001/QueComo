@@ -84,6 +84,9 @@ public class ShowAllDishesActivity extends AppCompatActivity {
         return true;
     }
 
+    /*
+    Returns the list of dishes in alphabetical order
+     */
     public String[] getDishesNames() {
         List<Dish> dishesList = Dish.listAll(Dish.class);
         String[] dishesNames = new String[dishesList.size()];

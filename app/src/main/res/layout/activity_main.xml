@@ -9,13 +9,14 @@
         android:id="@+id/botonDamePlato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="25dp"
         android:onClick="onClick"
         android:text="¡Dime plato!"
-        android:textSize="40sp"
+        android:textSize="30sp"
         tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="208dp" />
+        tools:layout_editor_absoluteY="208dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/dishName"
@@ -25,12 +26,12 @@
         android:scrollHorizontally="true"
         android:ellipsize="end"
         android:maxLines="2"
-        android:width="250dp"
-        android:height="50dp"
-        android:textSize="20dp"
+        android:width="250sp"
+        android:height="80sp"
+        android:textSize="20sp"
         android:layout_below="@+id/botonDamePlato"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="56dp" />
+        android:layout_marginTop="56sp" />
 
 
     <Button

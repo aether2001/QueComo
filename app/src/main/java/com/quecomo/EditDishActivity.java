@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.quecomo.entities.Dish;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.List;
 
 public class EditDishActivity extends AppCompatActivity {
@@ -33,7 +35,7 @@ public class EditDishActivity extends AppCompatActivity {
         if (!"".equals(newDishName)) {
             List<Dish> dishes = Dish.find(Dish.class, "name = ?", beforeEditDishName);
             Dish dish = dishes.get(0);
-            dish.setName(newDishName);
+            dish.setName(StringUtils.capitalize(newDishName));
             dish.save();
             Toast toast = Toast.makeText(this, R.string.dishEdited, Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);

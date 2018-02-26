@@ -30,5 +30,6 @@ dependencies {
     compile 'junit:junit:4.12'
     compile 'com.github.satyan:sugar:1.5'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'org.apache.commons:commons-lang3:3.6'
     testCompile 'junit:junit:4.12'
 }
